@@ -7,13 +7,12 @@ class Header extends Component {
 
   componentWillMount() {
     if (this.props.authenticated && !this.props.user) {
-      this.props.verifyJwt();  // fetch username
+      this.props.verifyJwt();
     }
   }
 
   renderLinks() {
     if (this.props.authenticated) {
-      // show a dropdown menu for authenticated user
       return (
         <div className="navbar-nav nav-item dropdown ml-auto">
           <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.props.username}</a>
@@ -27,7 +26,6 @@ class Header extends Component {
         </div>
       );
     } else {
-      // show a link to sign in or sign up
       return (
         <ul className="navbar-nav">
           <li className="nav-item" key={1}>
@@ -48,15 +46,16 @@ class Header extends Component {
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
-          <Link className="navbar-brand" to="/">Haichao's Blog System</Link>
-
+          <Link className="navbar-brand" to="/">
+            Mern Stack Blog
+          </Link>
           <div className="collapse navbar-collapse" id="navbarsExampleContainer">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/posts">Posts</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/haichao-yu/react-redux-blog">GitHub</a>
+                <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/nguyenvanhuan243/MernStack_Blog_FrontEnd">GitHub</a>
               </li>
             </ul>
             <form className="form-inline my-2 my-md-0">
